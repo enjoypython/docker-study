@@ -11,6 +11,12 @@
 - [레퍼런스 링크](#99)
     - [초보를 위한 도커 안내서 - 이미지 만들고 배포하기 SERIES 3/3](https://subicura.com/2017/02/10/docker-guide-for-beginners-create-image-and-deploy.html)
     - [도커 명령어 정리](https://nirsa.tistory.com/66?category=868315)
+    - [공식 docker-compose 레퍼런스](https://docs.docker.com/compose/reference/)
+    - [Docker Compose 커맨드 사용법](https://www.daleseo.com/docker-compose/)
+    - [YAML 문법](https://subicura.com/k8s/prepare/yaml.html#%E1%84%80%E1%85%B5%E1%84%87%E1%85%A9%E1%86%AB%E1%84%86%E1%85%AE%E1%86%AB%E1%84%87%E1%85%A5%E1%86%B8)
+    - [YAML 문법 2](https://lejewk.github.io/yaml-syntax/)
+    - [JSON to YAML](https://www.json2yaml.com/)
+    
 
 <br>
 
@@ -207,8 +213,43 @@ docker volume create [name]
 docker volume inspect [volume name]
 ```
 
-## Docker Compose
+<br>
+
+# Docker Compose
+
+`up` 명령어 : Docker Compose 컨테이너 생성 및 실행
 ```bash
-작성중
+docker-compose up
 ```
 
+`down` 명령어 : Docker Compose 컨테이너 정지 및 삭제
+```bash
+docker-compose down
+```
+
+`start` 명령어 : 중지된 Docker Compose 컨테이너 시작
+```bash
+docker-compose down
+```
+
+`stop` 명령어 : Docker Compose 컨테이너 정지
+```bash
+docker-compose down
+```
+
+`ps` 명령어 : Docker Compose 컨테이너 조회
+```bash
+docker-compose ps
+```
+
+`logs` 명령어 : Docker Compose 로그 조회
+```bash
+# -f  옵션 추가 시 실시간 로그확인 가능
+docker-compose logs -f web
+```
+
+`run` 명령어 : Docker Compose 컨테이너 내부에서 명령 실행
+```bash
+docker-compose run [서비스명] [실행 대상 명령]
+# docker-compose run web env
+```
