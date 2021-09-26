@@ -84,6 +84,13 @@ docker container run -d -p 80:80 --name apache httpd:latest
 docker container stop [컨테이너 명]
 ```
 
+## 컨테이너 삭제
+`rm` 명령어
+```bash
+docker rm [컨테이너 명]
+```
+
+
 <br>
 
 ## 컨테이너 재시작
@@ -154,6 +161,9 @@ docker diff [컨테이너 명]
 
 ## 유휴(IDLE) 이미지 및 컨테이너 삭제
 ```bash
+# 이미지 제거
+docker image rm [OPTIONS] IMAGE [IMAGE...]
+
 # 실행하지 않은 컨테이너의 이미지만 삭제 (컨테이너가 실행중이라면 삭제되지 않는다)
 docker image prune
 
@@ -181,7 +191,7 @@ docker image save -o {파일이름} {이미지이름:태그명}
 
 ## Docker Image Build
 ```bash
-docker build -t hello-docker .
+docker build -t [image_name]:[tag_name] .
 # -t 는 태그를 의미한다
 # 'hello-docker' 라는 이름으로 빌드할것이며 
 # . 경로(현재경로) 기준으로 빌드한다는 의미
@@ -205,12 +215,17 @@ docker cp {컨테이너이름}:{복사할 컨테이너내부 대상} {localhost 
 
 ## Docker Volume
 Sharing the Source Code with a Container
+### ref : https://0902.tistory.com/6
 ```bash
 # Volume Create
 docker volume create [name]
 
 # inspect volume
 docker volume inspect [volume name]
+
+# container1의 /data 디렉토리와 container2의 /data 디렉토리를 호스트의 /root/data 디렉토리와 매핑
+docker run -it --name container1 -v /root/data:/data [이미지] [커맨드]
+docker run -it --name container1 -v /root/data:/data centos /bin/bash
 ```
 
 <br>
