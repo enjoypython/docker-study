@@ -65,7 +65,7 @@ docker container run --it --name ubuntu ubuntu:latest
 <br>
 
 ## 백그라운드 컨테이너 실행
-
+[[Docker] 도커에서 Container 포트와 Host 포트의 개념](https://m.blog.naver.com/alice_k106/220278762795)
 ```bash
 # ref : 멋쟁이사자
 # 컨테이너를 "백그라운드"에서 실행하고 "호스트의 80번 포트를 컨테이너의 80번 포트로 포워딩" 한다. 
